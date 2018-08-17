@@ -1,0 +1,21 @@
+<?php
+namespace Google\Cloud\Samples\Vision;
+
+use Google\Cloud\Vision\VisionClient;
+
+ $projectId = 'DOT_Recognition';
+ $path = 'Desktop/DOT_Truck.JPEG';
+
+function detect_text($projectId, $path)
+{
+    $vision = new VisionClient([
+        'projectId' => $projectId,
+    ]);
+    $image = $vision->image(file_get_contents($path), ['TEXT_DETECTION']);
+    $result = $vision->annotate($image);
+    print("Texts:\n");
+    foreach ((array) $result->text() as $text) {
+        print($text->description() . PHP_EOL);
+    }
+}
+?>
