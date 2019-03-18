@@ -3,7 +3,7 @@ namespace Google\Cloud\Samples\Vision;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 require_once('google-cloud/vision');
 //require google/cloud-vision;
-$apikey= "AIzaSyDVW4hxmWbZZevc56ZcP1-oaZSjCG-4AZk";
+$apikey= "apikey";
  $projectId = 'DOT_Recognition';
  $path = "Desktop/DOT_Truck.JPEG";
  print_r($path);
